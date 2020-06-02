@@ -31,8 +31,10 @@ $photos = Photo::find_all();
                     <th>File Name</th>
                     <th>Alternate Text</th>
                     <th>Size</th>
+                    <th>Comments</th>
                     <th>Edit</th>
                     <th>Delete?</th>
+                    <th>View?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,10 +50,20 @@ $photos = Photo::find_all();
                         <td><?php echo $photo->filename; ?></td>
                         <td><?php echo $photo->alternate_text; ?></td>
                         <td><?php echo $photo->size; ?></td>
-                        <td><a  href="edit_photo.php?id=<?php echo $photo->id; ?>"
-                                class="btn btn-danger rounded-0"><i class="far fa-edit"></i></a></td>
-                        <td><a  href="delete_photo.php?id=<?php echo $photo->id; ?>"
-                                class="btn btn-danger rounded-0"><i class="far fa-trash-alt"></i></a></td>
+                        <td>
+                            <a href="" comments_photo.php?id="<?php echo $photo->id; ?>">
+                                <?php
+                                $comments = Comment::find_the_comment($photo->id);
+                                echo count($comments);
+                                ?>
+                            </a>
+                        </td>
+                        <td><a href="edit_photo.php?id=<?php echo $photo->id; ?>"
+                               class="btn btn-danger rounded-0"><i class="far fa-edit"></i></a></td>
+                        <td><a href="delete_photo.php?id=<?php echo $photo->id; ?>"
+                               class="btn btn-danger rounded-0"><i class="far fa-trash-alt"></i></a></td>
+                        <td><a href="../photo.php?id=<?php echo $photo->id; ?>"
+                               class="btn btn-danger rounded-0"><i class="far fa-eye"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
 

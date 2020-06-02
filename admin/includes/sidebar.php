@@ -56,7 +56,7 @@
     </li>
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="comments.php">
+        <a class="nav-link" href="../comment.php">
             <i class="fas fa-comments"></i>
             <span>Comments</span></a>
     </li>
