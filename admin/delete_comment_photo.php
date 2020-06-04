@@ -10,9 +10,9 @@ if(empty($_GET['id'])){
 $comment = Comment::find_by_id($_GET['id']);
 if ($comment){
  $comment->delete();
- redirect('comments_photo.php?id={$comment->photo_id}');
+ redirect('comments_photo.php?id=' . $comment->photo_id);
 }else{
- redirect('comments_photo.php?id={$comment->photo_id}');
+ redirect('comments_photo.php?id=' . $comment->photo_id);
 }
 
 

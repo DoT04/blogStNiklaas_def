@@ -17,7 +17,6 @@ $comments = Comment::find_all();
             <h2 class="page-header">
                 COMMENTS
             </h2>
-            <td><a href="add_comment.php" class="btn btn-primary rounded-0"><i class="fas fa-comments">Add Comment</i></a></td>
             <table class="table table-header">
                 <thead>
                 <tr>
@@ -25,7 +24,6 @@ $comments = Comment::find_all();
 
                     <th>Id</th>
                     <th>Author</th>
-
                     <th>Body</th>
                     <th>Delete?</th>
                 </tr>

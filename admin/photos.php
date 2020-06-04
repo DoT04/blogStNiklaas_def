@@ -32,9 +32,10 @@ $photos = Photo::find_all();
                     <th>Alternate Text</th>
                     <th>Size</th>
                     <th>Comments</th>
-                    <th>Edit</th>
-                    <th>Delete?</th>
                     <th>View?</th>
+                    <th>Edit?</th>
+                    <th>Delete?</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -44,7 +45,7 @@ $photos = Photo::find_all();
                     <tr>
                         <td><img src="<?php echo $photo->picture_path(); ?>" height="62" width="62" alt=""></td>
 
-                        <td><?php echo $photo->id; ?></td>
+                        <td class="d-flex align-self-stretch"><?php echo $photo->id; ?></td>
                         <td><?php echo $photo->title; ?></td>
                         <td><?php echo $photo->caption; ?></td>
                         <td><?php echo $photo->filename; ?></td>
