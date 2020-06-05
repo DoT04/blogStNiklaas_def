@@ -32,7 +32,7 @@ class Paginate
 
     public function has_previous()
     {
-        return $this->has_previous() >= 1 ? true : false;
+        return $this->previous() >= 1 ? true : false;
     }
 
     public function has_next()

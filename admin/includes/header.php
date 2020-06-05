@@ -1,9 +1,9 @@
 <?php
 require_once ('init.php');
 ob_start();
-$aantalUsers = User::find_all();
+/*$aantalUsers = User::find_all();
 $aantalComments =  Comment::find_all();
-$aantalPhotos = Photo::find_all();
+$aantalPhotos = Photo::find_all();*/
 ?>
 <!DOCTYPE html>
 <html lang="en">

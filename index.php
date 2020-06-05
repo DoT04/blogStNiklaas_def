@@ -1,5 +1,7 @@
 <?php
-include('includes/header.php');
+include("includes/header.php");
+//include ("admin/includes/init.php");
+//$photos = Photo::find_all();
 
 $page = !empty($_GET['page']) ? (int)$_GET['page'] : 1;
 $items_per_page = 4;
@@ -7,17 +9,17 @@ $items_total_count = Photo::count_all();
 
 $paginate = new Paginate($page, $items_per_page, $items_total_count);
 
-$sql = "SELECT * FROM photo";
+$sql = "SELECT * FROM photo ";
 $sql .= "LIMIT {$items_per_page} ";
 $sql .= "OFFSET {$paginate->offset()}";
 
 $photos = Photo::find_this_query($sql);
-//$photos = Photo::find_all();
+
 ?>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Homepagina: photos</h1>
+                <h1>Blog Sint Niklaas</h1>
                 <?php foreach ($photos as $photo): ?>
                     <div class="col-3">
                         <a href="photo.php?id=<?php echo $photo->id; ?>">
@@ -27,7 +29,7 @@ $photos = Photo::find_this_query($sql);
                 <?php endforeach; ?>
             </div>
             <div class="row">
-                <ul class="pager">
+                <ul class="pagination">
                     <?php
                     if ($paginate->page_total() > 1) {
                         if ($paginate->has_next()) {
@@ -39,7 +41,7 @@ $photos = Photo::find_this_query($sql);
                             if ($i == $paginate->current_page) {
                                 echo "<li class='active'><a href = 'index.php?page={$i}' > {$i} </a > </li >";
                             } else {
-                                echo " < li><a href = 'index.php?page={$i}' > {$i}</a > </li > ";
+                                echo " <li><a href = 'index.php?page={$i}' > {$i}</a > </li > ";
                             }
                         }
 
